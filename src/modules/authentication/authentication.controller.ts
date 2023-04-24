@@ -1,53 +1,65 @@
-import { Body, Controller, Get, Headers, HttpStatus, Post, Query, Res } from '@nestjs/common';
-import { AuthenticationService } from './authentication.service';
-require('dotenv').config();
+import {
+	Body,
+	Controller,
+	Get,
+	Headers,
+	HttpStatus,
+	Post,
+	Query,
+	Res,
+} from "@nestjs/common";
+import { AuthenticationService } from "./authentication.service";
+require("dotenv").config();
 
-@Controller('/api/v1/auth')
+@Controller("/api/v1/auth")
 export class AuthenticationController {
-  constructor(
-    private readonly authService: AuthenticationService,
-  ) { }
+	constructor(private readonly authService: AuthenticationService) {}
 
+	@Post("/register")
+	async register(@Body() payload, @Res() res) {
+		const {
+			firstName,
+			lastName,
+			userName,
+			email,
+			gender,
+			password,
+			role,
+			phone,
+			age,
+		} = payload;
 
-  @Post('/register')
-  async registerUser(@Body() payload, @Res() res) {
+		const { error, data } = await this.authService.register(
+			firstName,
+			lastName,
+			userName,
+			email,
+			gender,
+			password,
+			role,
+			phone,
+			age
+		);
 
-    const { username, email, phone, password } = payload;
+		if (error)
+			return res
+				.status(HttpStatus.BAD_REQUEST)
+				.json({ error: error.response.data });
 
-    let error, data;
+		return res.status(HttpStatus.OK).json({ data });
+	}
 
-    if (username) {
-      // const { error: err, data: results } = await this.authService.registerByUsername(username, password);
-      // error =  err;
-      // data =  results;
-    }
+	@Post("/login")
+	async logIn(@Body() payload, @Res() res) {
+		const { email, password } = payload;
 
-    else if (email) {
-      const { error: err, data: results } = await this.authService.registerByEmail(email, password);
-      error = err;
-      data = results;
-    }
+		const { error, data } = await this.authService.login(email, password);
 
-    else if (phone) {
-      // const { error: err, data: results } = await this.authService.registerByPhone(phone, password);
-      // error =  err;
-      // data =  results;
-    }
+		if (error)
+			return res
+				.status(HttpStatus.BAD_REQUEST)
+				.json({ error: error.response.data });
 
-    if (error) return res.status(HttpStatus.BAD_REQUEST).json({ error: error.response.data });
-
-    return res.status(HttpStatus.OK).json({ data });
-  }
-
-  @Post('/login')
-  async addMedicine(@Body() payload, @Res() res) {
-
-    const { email, password } = payload;
-
-    const { error, data } = await this.authService.login(email, password);
-
-    if (error) return res.status(HttpStatus.BAD_REQUEST).json({ error: error.response.data });
-
-    return res.status(HttpStatus.OK).json({ data });
-  }
+		return res.status(HttpStatus.OK).json({ data });
+	}
 }

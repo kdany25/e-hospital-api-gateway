@@ -1,128 +1,166 @@
-import { Injectable } from '@nestjs/common';
-import axios from 'axios';
-require('dotenv').config();
+import { Injectable } from "@nestjs/common";
+import axios from "axios";
+require("dotenv").config();
 
 @Injectable()
 export class MedicalService {
+	async populateMedicalRecords() {
+		try {
+			const { status, data } = await axios.post(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/populateMedicalRecords`
+			);
 
-  async populateMedicalRecords() {
-    try {
-      const { status, data } = await axios.post(`${process.env.BASE_URL}/populateMedicalRecords`);
+			return { status, data };
+		} catch (error) {
+			return { error: error.message };
+		}
+	}
 
-      return { status, data }
+	async assignDoctorToMedicalRecord(
+		physicianId: string,
+		medicalRecordId: string,
+		patientId: string
+	) {
+		try {
+			const {
+				status,
+				data,
+			} = await axios.post(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/medicalRecords/assignDoctor`,
+				{ physicianId, id: medicalRecordId, patientId }
+			);
 
-    } catch (error) {
-      return { error: error.message }
-    }
-  }
+			return { status, data };
+		} catch (error) {
+			return { error: error.message };
+		}
+	}
 
-  async assignDoctorToMedicalRecord(physicianId: string, medicalRecordId: string, patientId: string) {
-    try {
-      const { status, data } = await axios.post(`${process.env.BASE_URL}/medicalRecords/assignDoctor`, { physicianId, id: medicalRecordId, patientId });
+	async assignPharmacistToMedicalRecord(
+		pharmacistId: string,
+		medicalRecordId: string,
+		patientId: string
+	) {
+		try {
+			const {
+				status,
+				data,
+			} = await axios.post(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/medicalRecords/assignPharmacist`,
+				{ pharmacistId, id: medicalRecordId, patientId }
+			);
 
-      return { status, data }
+			return { status, data };
+		} catch (error) {
+			return { error: error.message };
+		}
+	}
 
-    } catch (error) {
-      return { error: error.message }
-    }
-  }
+	async addConsultation(
+		id: string,
+		physicianId: string,
+		consultation: string
+	) {
+		try {
+			const {
+				status,
+				data,
+			} = await axios.post(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/addConsultation`,
+				{ id, physicianId, consultation }
+			);
 
-  async assignPharmacistToMedicalRecord(pharmacistId: string, medicalRecordId: string, patientId: string) {
-    try {
-      const { status, data } = await axios.post(`${process.env.BASE_URL}/medicalRecords/assignPharmacist`, { pharmacistId, id: medicalRecordId, patientId });
+			return { status, data };
+		} catch (error) {
+			return { error };
+		}
+	}
 
-      return { status, data }
+	async addMedicine(id: string, pharmacistId: string, medicines: string) {
+		try {
+			const {
+				status,
+				data,
+			} = await axios.post(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/addMedicine`,
+				{ id, medicines, pharmacistId }
+			);
 
-    } catch (error) {
-      return { error: error.message }
-    }
-  }
+			return { status, data };
+		} catch (error) {
+			return { error };
+		}
+	}
 
-  async addConsultation(id: string, physicianId: string, consultation: string) {
-    try {
-      const { status, data } = await axios.post(`${process.env.BASE_URL}/addConsultation`, { id, physicianId, consultation });
+	async getMedicalRecordsByPatientId(patientId: string) {
+		try {
+			const { status, data } = await axios.get(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/medicalRecords?patientId=${patientId}`
+			);
 
-      return { status, data }
+			return { status, data };
+		} catch (error) {
+			return { error: error.message };
+		}
+	}
 
-    } catch (error) {
-      return { error }
-    }
-  }
+	async getMedicalRecordsByPhysicianId(physicianId: string) {
+		try {
+			const { status, data } = await axios.get(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/medicalRecords?physicianId=${physicianId}`
+			);
 
-  async addMedicine(id: string, pharmacistId: string, medicines: string) {
-    try {
-      const { status, data } = await axios.post(`${process.env.BASE_URL}/addMedicine`, { id, medicines, pharmacistId });
+			return { status, data };
+		} catch (error) {
+			return { error: error.message };
+		}
+	}
 
-      return { status, data }
+	async getMedicalRecordsByPharmacistId(pharmacistId: string) {
+		try {
+			const { status, data } = await axios.get(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/medicalRecords?pharmacistId=${pharmacistId}`
+			);
 
-    } catch (error) {
-      return { error }
-    }
-  }
+			return { status, data };
+		} catch (error) {
+			return { error: error.message };
+		}
+	}
 
-  async getMedicalRecordsByPatientId(patientId: string) {
-    try {
-      const { status, data } = await axios.get(`${process.env.BASE_URL}/medicalRecords?patientId=${patientId}`);
+	async getMedicalRecords() {
+		try {
+			const { status, data } = await axios.get(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/medicalRecords`
+			);
 
-      return { status, data }
+			return { status, data };
+		} catch (error) {
+			return { error: error.message };
+		}
+	}
 
-    } catch (error) {
-      return { error: error.message }
-    }
-  }
+	async getAllPhysicians() {
+		try {
+			const { status, data } = await axios.get(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/physicians`
+			);
 
-  async getMedicalRecordsByPhysicianId(physicianId: string) {
-    try {
-      const { status, data } = await axios.get(`${process.env.BASE_URL}/medicalRecords?physicianId=${physicianId}`);
+			return { status, data };
+		} catch (error) {
+			return { error: error.message };
+		}
+	}
 
-      return { status, data }
+	async getAllPharmacists() {
+		try {
+			const { status, data } = await axios.get(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/pharmacists`
+			);
 
-    } catch (error) {
-      return { error: error.message }
-    }
-  }
-
-  async getMedicalRecordsByPharmacistId(pharmacistId: string) {
-    try {
-      const { status, data } = await axios.get(`${process.env.BASE_URL}/medicalRecords?pharmacistId=${pharmacistId}`);
-
-      return { status, data }
-
-    } catch (error) {
-      return { error: error.message }
-    }
-  }
-
-  async getMedicalRecords() {
-    try {
-      const { status, data } = await axios.get(`${process.env.BASE_URL}/medicalRecords`);
-
-      return { status, data }
-
-    } catch (error) {
-      return { error: error.message }
-    }
-  }
-
-  async getAllPhysicians() {
-    try {
-      const { status, data } = await axios.get(`${process.env.BASE_URL}/physicians`);
-
-      return { status, data }
-
-    } catch (error) {
-      return { error: error.message }
-    }
-  }
-
-  async getAllPharmacists() {
-    try {
-      const { status, data } = await axios.get(`${process.env.BASE_URL}/pharmacists`);
-
-      return { status, data }
-
-    } catch (error) {
-      return { error: error.message }
-    }
-  }
+			return { status, data };
+		} catch (error) {
+			return { error: error.message };
+		}
+	}
 }
