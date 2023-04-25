@@ -20,6 +20,15 @@ let MedicalService = class MedicalService {
             return { error: error.message };
         }
     }
+    async createSymptoms(patientId, symptoms) {
+        try {
+            const { status, data, } = await axios_1.default.post(`${process.env.BASE_URL_MEDICAL_UNIT}/createRecord`, { patientId, symptoms });
+            return { status, data };
+        }
+        catch (error) {
+            return { error };
+        }
+    }
     async assignDoctorToMedicalRecord(physicianId, medicalRecordId, patientId) {
         try {
             const { status, data, } = await axios_1.default.post(`${process.env.BASE_URL_MEDICAL_UNIT}/medicalRecords/assignDoctor`, { physicianId, id: medicalRecordId, patientId });

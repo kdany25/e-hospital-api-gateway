@@ -15,6 +15,21 @@ export class MedicalService {
 			return { error: error.message };
 		}
 	}
+	async createSymptoms(patientId: string, symptoms: string) {
+		try {
+			const {
+				status,
+				data,
+			} = await axios.post(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/createRecord`,
+				{ patientId, symptoms }
+			);
+
+			return { status, data };
+		} catch (error) {
+			return { error };
+		}
+	}
 
 	async assignDoctorToMedicalRecord(
 		physicianId: string,

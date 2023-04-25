@@ -1,4 +1,4 @@
-import { MedicalService } from './medical.service';
+import { MedicalService } from "./medical.service";
 export declare class MedicalController {
     private readonly medicalService;
     constructor(medicalService: MedicalService);
@@ -11,4 +11,5 @@ export declare class MedicalController {
     assignPharmacy(payload: any, res: any): Promise<any>;
     assignConsultation(payload: any, res: any): Promise<any>;
     addMedicine(payload: any, res: any): Promise<any>;
+    createSymptoms(payload: any, res: any): Promise<any>;
 }

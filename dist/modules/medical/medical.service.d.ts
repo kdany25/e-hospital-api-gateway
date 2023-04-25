@@ -8,6 +8,15 @@ export declare class MedicalService {
         status?: undefined;
         data?: undefined;
     }>;
+    createSymptoms(patientId: string, symptoms: string): Promise<{
+        status: number;
+        data: any;
+        error?: undefined;
+    } | {
+        error: any;
+        status?: undefined;
+        data?: undefined;
+    }>;
     assignDoctorToMedicalRecord(physicianId: string, medicalRecordId: string, patientId: string): Promise<{
         status: number;
         data: any;
