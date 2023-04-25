@@ -1,5 +1,5 @@
 export declare class AuthenticationService {
-    register(email: string, password: string, firstName: string, lastName: string, userName: string, role: string, phone: string, gender: string, age: number): Promise<{
+    register(firstName: string, lastName: string, userName: string, email: string, gender: string, password: string, role: string, phone: string, age: number): Promise<{
         status: number;
         data: any;
         error?: undefined;

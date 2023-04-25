@@ -11,7 +11,8 @@ const common_1 = require("@nestjs/common");
 const axios_1 = require("axios");
 require("dotenv").config();
 let AuthenticationService = class AuthenticationService {
-    async register(email, password, firstName, lastName, userName, role, phone, gender, age) {
+    async register(firstName, lastName, userName, email, gender, password, role, phone, age) {
+        console.log(email);
         try {
             const { status, data } = await axios_1.default.post(`${process.env.BASE_URL_AUTH}/register`, {
                 firstName,

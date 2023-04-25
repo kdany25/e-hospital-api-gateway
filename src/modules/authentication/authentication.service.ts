@@ -5,14 +5,14 @@ require("dotenv").config();
 @Injectable()
 export class AuthenticationService {
 	async register(
-		email: string,
-		password: string,
 		firstName: string,
 		lastName: string,
 		userName: string,
+		email: string,
+		gender: string,
+		password: string,
 		role: string,
 		phone: string,
-		gender: string,
 		age: number
 	) {
 		try {
