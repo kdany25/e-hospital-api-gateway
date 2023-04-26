@@ -173,10 +173,7 @@ export class MedicalController {
 			consultation
 		);
 
-		if (error)
-			return res
-				.status(HttpStatus.BAD_REQUEST)
-				.json({ error: error.response.data });
+		if (error) return res.status(HttpStatus.BAD_REQUEST).json({ error });
 
 		return res.status(HttpStatus.OK).json({ data });
 	}
@@ -191,10 +188,7 @@ export class MedicalController {
 			medicines
 		);
 
-		if (error)
-			return res
-				.status(HttpStatus.BAD_REQUEST)
-				.json({ error: error.response.data });
+		if (error) return res.status(HttpStatus.BAD_REQUEST).json({ error });
 
 		return res.status(HttpStatus.OK).json({ data });
 	}
@@ -208,10 +202,7 @@ export class MedicalController {
 			symptoms
 		);
 
-		if (error)
-			return res
-				.status(HttpStatus.BAD_REQUEST)
-				.json({ error: error.response.data });
+		if (error) return res.status(HttpStatus.BAD_REQUEST).json({ error });
 
 		return res.status(HttpStatus.OK).json({ data });
 	}
@@ -235,17 +226,20 @@ export class MedicalController {
 			medExpiration
 		);
 
-		if (error)
-			return res
-				.status(HttpStatus.BAD_REQUEST)
-				.json({ error: error.response.data });
+		if (error) return res.status(HttpStatus.BAD_REQUEST).json({ error });
 
 		return res.status(HttpStatus.OK).json({ data });
 	}
 
 	@Post("/prescribeMedecine")
 	async prescribeMedecine(@Body() payload, @Res() res) {
-		const { recordId, pharmacistId,medName, medPrice, medExpiration } = payload;
+		const {
+			recordId,
+			pharmacistId,
+			medName,
+			medPrice,
+			medExpiration,
+		} = payload;
 
 		const { error, data } = await this.medicalService.prescribeMedecine(
 			recordId,
@@ -255,10 +249,7 @@ export class MedicalController {
 			medExpiration
 		);
 
-		if (error)
-			return res
-				.status(HttpStatus.BAD_REQUEST)
-				.json({ error: error.response.data });
+		if (error) return res.status(HttpStatus.BAD_REQUEST).json({ error });
 
 		return res.status(HttpStatus.OK).json({ data });
 	}

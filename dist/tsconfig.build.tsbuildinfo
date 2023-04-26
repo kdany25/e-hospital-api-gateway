@@ -1182,7 +1182,7 @@
         "affectsGlobalScope": false
       },
       "../src/modules/authentication/authentication.controller.ts": {
-        "version": "a828ac15c3832866758b97f272a61cd61fd449837347332b568845479fe598f8",
+        "version": "6c9faf8d68bf25a32aeac74b71b1f7754d44e2846e4abbeb7fbc1eb0201b7def",
         "signature": "e0056529ab401ed415c1b305463e5086024b5c4725dda0d0f97587a53bf45223",
         "affectsGlobalScope": false
       },
@@ -1197,7 +1197,7 @@
         "affectsGlobalScope": false
       },
       "../src/modules/medical/medical.controller.ts": {
-        "version": "60eb5569355418353973d4f085a16475669da43f9025371da8b5aea0a57ebeec",
+        "version": "d7cf34fd43eb124454760e7afc400aa1f59930aaa5fbcead194b4bcd3e67907d",
         "signature": "e076f59a45b8c975eb0d84434152983d41735be42ebd67d8496d5a88d1e76e9e",
         "affectsGlobalScope": false
       },
@@ -1712,7 +1712,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "41581f79f91dd23e44373d7e06306a44999dcde24d928dc847341d946c203c6b",
+        "version": "b6a5ee6dab7495c5aeaa2fd171ce460c3653e3b786b6e4a99d08ffe2f33250b1",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },

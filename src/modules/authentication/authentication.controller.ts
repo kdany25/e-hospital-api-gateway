@@ -41,10 +41,7 @@ export class AuthenticationController {
 			age
 		);
 
-		if (error)
-			return res
-				.status(HttpStatus.BAD_REQUEST)
-				.json({ error: error.response.data });
+		if (error) return res.status(HttpStatus.BAD_REQUEST).json({ error });
 
 		return res.status(HttpStatus.OK).json({ data });
 	}
@@ -55,10 +52,7 @@ export class AuthenticationController {
 
 		const { error, data } = await this.authService.login(email, password);
 
-		if (error)
-			return res
-				.status(HttpStatus.BAD_REQUEST)
-				.json({ error: error.response.data });
+		if (error) return res.status(HttpStatus.BAD_REQUEST).json({ error });
 
 		return res.status(HttpStatus.OK).json({ data });
 	}

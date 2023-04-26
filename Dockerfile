@@ -18,6 +18,8 @@ COPY package*.json ./
 ENV NODE_ENV=production
 RUN npm ci
 
+EXPOSE 3001
+
 # Bundle app source
 COPY . . 
 

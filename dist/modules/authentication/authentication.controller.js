@@ -24,18 +24,14 @@ let AuthenticationController = class AuthenticationController {
         const { firstName, lastName, userName, email, gender, password, role, phone, age, } = payload;
         const { error, data } = await this.authService.register(firstName, lastName, userName, email, gender, password, role, phone, age);
         if (error)
-            return res
-                .status(common_1.HttpStatus.BAD_REQUEST)
-                .json({ error: error.response.data });
+            return res.status(common_1.HttpStatus.BAD_REQUEST).json({ error });
         return res.status(common_1.HttpStatus.OK).json({ data });
     }
     async logIn(payload, res) {
         const { email, password } = payload;
         const { error, data } = await this.authService.login(email, password);
         if (error)
-            return res
-                .status(common_1.HttpStatus.BAD_REQUEST)
-                .json({ error: error.response.data });
+            return res.status(common_1.HttpStatus.BAD_REQUEST).json({ error });
         return res.status(common_1.HttpStatus.OK).json({ data });
     }
 };

@@ -102,27 +102,21 @@ let MedicalController = class MedicalController {
         const { id, physicianId, consultation } = payload;
         const { error, data } = await this.medicalService.addConsultation(id, physicianId, consultation);
         if (error)
-            return res
-                .status(common_1.HttpStatus.BAD_REQUEST)
-                .json({ error: error.response.data });
+            return res.status(common_1.HttpStatus.BAD_REQUEST).json({ error });
         return res.status(common_1.HttpStatus.OK).json({ data });
     }
     async addMedicine(payload, res) {
         const { id, pharmacistId, medicines } = payload;
         const { error, data } = await this.medicalService.addMedicine(id, pharmacistId, medicines);
         if (error)
-            return res
-                .status(common_1.HttpStatus.BAD_REQUEST)
-                .json({ error: error.response.data });
+            return res.status(common_1.HttpStatus.BAD_REQUEST).json({ error });
         return res.status(common_1.HttpStatus.OK).json({ data });
     }
     async createSymptoms(payload, res) {
         const { patientId, symptoms } = payload;
         const { error, data } = await this.medicalService.createSymptoms(patientId, symptoms);
         if (error)
-            return res
-                .status(common_1.HttpStatus.BAD_REQUEST)
-                .json({ error: error.response.data });
+            return res.status(common_1.HttpStatus.BAD_REQUEST).json({ error });
         return res.status(common_1.HttpStatus.OK).json({ data });
     }
     async getAllMedecines(res) {
@@ -135,18 +129,14 @@ let MedicalController = class MedicalController {
         const { medName, medPrice, medExpiration } = payload;
         const { error, data } = await this.medicalService.uploadMedecine(medName, medPrice, medExpiration);
         if (error)
-            return res
-                .status(common_1.HttpStatus.BAD_REQUEST)
-                .json({ error: error.response.data });
+            return res.status(common_1.HttpStatus.BAD_REQUEST).json({ error });
         return res.status(common_1.HttpStatus.OK).json({ data });
     }
     async prescribeMedecine(payload, res) {
-        const { recordId, pharmacistId, medName, medPrice, medExpiration } = payload;
+        const { recordId, pharmacistId, medName, medPrice, medExpiration, } = payload;
         const { error, data } = await this.medicalService.prescribeMedecine(recordId, pharmacistId, medName, medPrice, medExpiration);
         if (error)
-            return res
-                .status(common_1.HttpStatus.BAD_REQUEST)
-                .json({ error: error.response.data });
+            return res.status(common_1.HttpStatus.BAD_REQUEST).json({ error });
         return res.status(common_1.HttpStatus.OK).json({ data });
     }
 };
