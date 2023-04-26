@@ -215,4 +215,5 @@ export class MedicalController {
 
 		return res.status(HttpStatus.OK).json({ data });
 	}
+	
 }

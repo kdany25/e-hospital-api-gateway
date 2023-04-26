@@ -178,4 +178,65 @@ export class MedicalService {
 			return { error: error.message };
 		}
 	}
+
+	async uploadMedecine(medName: string, medPrice: number, medExpiration) {
+		try {
+			const {
+				status,
+				data,
+			} = await axios.post(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/uploadMedecine`,
+				{ medName, medPrice, medExpiration }
+			);
+
+			return { status, data };
+		} catch (error) {
+			return { error };
+		}
+	}
+	async getAllMedecine() {
+		try {
+			const { status, data } = await axios.get(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/getMedecines`
+			);
+
+			return { status, data };
+		} catch (error) {
+			return { error };
+		}
+	}
+
+	async prescribeMedecine(
+		recordId: string,
+		pharmacistId: string,
+		medName: string,
+		medPrice: number,
+		medExpiration: string
+	) {
+		try {
+			const {
+				status,
+				data,
+			} = await axios.post(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/prescribeMedecine`,
+				{ recordId, pharmacistId, medName, medPrice, medExpiration }
+			);
+
+			return { status, data };
+		} catch (error) {
+			return { error };
+		}
+	}
+
+	async downLoadPrescription(recordId: string) {
+		try {
+			const { status, data } = await axios.get(
+				`${process.env.BASE_URL_MEDICAL_UNIT}/downloadPrescription?recordId=${recordId}`
+			);
+
+			return { status, data };
+		} catch (error) {
+			return { error };
+		}
+	}
 }
