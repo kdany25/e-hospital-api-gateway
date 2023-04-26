@@ -125,6 +125,30 @@ let MedicalController = class MedicalController {
                 .json({ error: error.response.data });
         return res.status(common_1.HttpStatus.OK).json({ data });
     }
+    async getAllMedecines(res) {
+        const { error, data } = await this.medicalService.getAllMedecine();
+        if (error)
+            return res.status(common_1.HttpStatus.BAD_REQUEST).json({ error });
+        return res.status(common_1.HttpStatus.OK).json({ data });
+    }
+    async uploadMedecine(payload, res) {
+        const { medName, medPrice, medExpiration } = payload;
+        const { error, data } = await this.medicalService.uploadMedecine(medName, medPrice, medExpiration);
+        if (error)
+            return res
+                .status(common_1.HttpStatus.BAD_REQUEST)
+                .json({ error: error.response.data });
+        return res.status(common_1.HttpStatus.OK).json({ data });
+    }
+    async prescribeMedecine(payload, res) {
+        const { recordId, pharmacistId, medName, medPrice, medExpiration } = payload;
+        const { error, data } = await this.medicalService.prescribeMedecine(recordId, pharmacistId, medName, medPrice, medExpiration);
+        if (error)
+            return res
+                .status(common_1.HttpStatus.BAD_REQUEST)
+                .json({ error: error.response.data });
+        return res.status(common_1.HttpStatus.OK).json({ data });
+    }
 };
 __decorate([
     common_1.Get("/health"),
@@ -196,6 +220,27 @@ __decorate([
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "createSymptoms", null);
+__decorate([
+    common_1.Get("/allMedecines"),
+    __param(0, common_1.Res()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], MedicalController.prototype, "getAllMedecines", null);
+__decorate([
+    common_1.Post("/uploadMedecine"),
+    __param(0, common_1.Body()), __param(1, common_1.Res()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", Promise)
+], MedicalController.prototype, "uploadMedecine", null);
+__decorate([
+    common_1.Post("/prescribeMedecine"),
+    __param(0, common_1.Body()), __param(1, common_1.Res()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", Promise)
+], MedicalController.prototype, "prescribeMedecine", null);
 MedicalController = __decorate([
     common_1.Controller("/api/v1/medical"),
     __metadata("design:paramtypes", [medical_service_1.MedicalService])

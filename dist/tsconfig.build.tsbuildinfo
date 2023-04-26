@@ -1192,13 +1192,13 @@
         "affectsGlobalScope": false
       },
       "../src/modules/medical/medical.service.ts": {
-        "version": "63554445b661ce581b134c3e67031f72f6ef1591468835e2267c0d30ae058a8c",
-        "signature": "a77b808163482ee3f29b8809186652549a905eced84b6009a77fd67144600f1a",
+        "version": "c7b8c78c934638871a84a24413c5044cc2a8e3d18eb06bbfb5b1711d7546fbcd",
+        "signature": "0ffc8484f6a677bde1013eaecc48bda7148cfe1870af501b5eafa9bd711f769f",
         "affectsGlobalScope": false
       },
       "../src/modules/medical/medical.controller.ts": {
-        "version": "735f9353dec3d1378d404999571e8f81db1f91805afe2243af78a0b51a104bea",
-        "signature": "5f1491d7aaf1da2422ea8122b90280e55b2f6233631e15c95c0eb94e79ba1a83",
+        "version": "60eb5569355418353973d4f085a16475669da43f9025371da8b5aea0a57ebeec",
+        "signature": "e076f59a45b8c975eb0d84434152983d41735be42ebd67d8496d5a88d1e76e9e",
         "affectsGlobalScope": false
       },
       "../src/modules/medical/medical.module.ts": {

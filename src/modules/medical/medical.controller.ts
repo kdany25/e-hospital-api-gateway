@@ -215,5 +215,51 @@ export class MedicalController {
 
 		return res.status(HttpStatus.OK).json({ data });
 	}
-	
+
+	@Get("/allMedecines")
+	async getAllMedecines(@Res() res) {
+		const { error, data } = await this.medicalService.getAllMedecine();
+
+		if (error) return res.status(HttpStatus.BAD_REQUEST).json({ error });
+
+		return res.status(HttpStatus.OK).json({ data });
+	}
+
+	@Post("/uploadMedecine")
+	async uploadMedecine(@Body() payload, @Res() res) {
+		const { medName, medPrice, medExpiration } = payload;
+
+		const { error, data } = await this.medicalService.uploadMedecine(
+			medName,
+			medPrice,
+			medExpiration
+		);
+
+		if (error)
+			return res
+				.status(HttpStatus.BAD_REQUEST)
+				.json({ error: error.response.data });
+
+		return res.status(HttpStatus.OK).json({ data });
+	}
+
+	@Post("/prescribeMedecine")
+	async prescribeMedecine(@Body() payload, @Res() res) {
+		const { recordId, pharmacistId,medName, medPrice, medExpiration } = payload;
+
+		const { error, data } = await this.medicalService.prescribeMedecine(
+			recordId,
+			pharmacistId,
+			medName,
+			medPrice,
+			medExpiration
+		);
+
+		if (error)
+			return res
+				.status(HttpStatus.BAD_REQUEST)
+				.json({ error: error.response.data });
+
+		return res.status(HttpStatus.OK).json({ data });
+	}
 }

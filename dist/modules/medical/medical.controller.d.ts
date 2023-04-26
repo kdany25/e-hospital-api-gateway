@@ -12,4 +12,7 @@ export declare class MedicalController {
     assignConsultation(payload: any, res: any): Promise<any>;
     addMedicine(payload: any, res: any): Promise<any>;
     createSymptoms(payload: any, res: any): Promise<any>;
+    getAllMedecines(res: any): Promise<any>;
+    uploadMedecine(payload: any, res: any): Promise<any>;
+    prescribeMedecine(payload: any, res: any): Promise<any>;
 }

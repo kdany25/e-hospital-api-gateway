@@ -107,4 +107,40 @@ export declare class MedicalService {
         status?: undefined;
         data?: undefined;
     }>;
+    uploadMedecine(medName: string, medPrice: number, medExpiration: any): Promise<{
+        status: number;
+        data: any;
+        error?: undefined;
+    } | {
+        error: any;
+        status?: undefined;
+        data?: undefined;
+    }>;
+    getAllMedecine(): Promise<{
+        status: number;
+        data: any;
+        error?: undefined;
+    } | {
+        error: any;
+        status?: undefined;
+        data?: undefined;
+    }>;
+    prescribeMedecine(recordId: string, pharmacistId: string, medName: string, medPrice: number, medExpiration: string): Promise<{
+        status: number;
+        data: any;
+        error?: undefined;
+    } | {
+        error: any;
+        status?: undefined;
+        data?: undefined;
+    }>;
+    downLoadPrescription(recordId: string): Promise<{
+        status: number;
+        data: any;
+        error?: undefined;
+    } | {
+        error: any;
+        status?: undefined;
+        data?: undefined;
+    }>;
 }

@@ -119,6 +119,42 @@ let MedicalService = class MedicalService {
             return { error: error.message };
         }
     }
+    async uploadMedecine(medName, medPrice, medExpiration) {
+        try {
+            const { status, data, } = await axios_1.default.post(`${process.env.BASE_URL_MEDICAL_UNIT}/uploadMedecine`, { medName, medPrice, medExpiration });
+            return { status, data };
+        }
+        catch (error) {
+            return { error };
+        }
+    }
+    async getAllMedecine() {
+        try {
+            const { status, data } = await axios_1.default.get(`${process.env.BASE_URL_MEDICAL_UNIT}/getMedecines`);
+            return { status, data };
+        }
+        catch (error) {
+            return { error };
+        }
+    }
+    async prescribeMedecine(recordId, pharmacistId, medName, medPrice, medExpiration) {
+        try {
+            const { status, data, } = await axios_1.default.post(`${process.env.BASE_URL_MEDICAL_UNIT}/prescribeMedecine`, { recordId, pharmacistId, medName, medPrice, medExpiration });
+            return { status, data };
+        }
+        catch (error) {
+            return { error };
+        }
+    }
+    async downLoadPrescription(recordId) {
+        try {
+            const { status, data } = await axios_1.default.get(`${process.env.BASE_URL_MEDICAL_UNIT}/downloadPrescription?recordId=${recordId}`);
+            return { status, data };
+        }
+        catch (error) {
+            return { error };
+        }
+    }
 };
 MedicalService = __decorate([
     common_1.Injectable()
