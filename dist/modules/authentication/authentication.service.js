@@ -12,7 +12,7 @@ const axios_1 = require("axios");
 require("dotenv").config();
 let AuthenticationService = class AuthenticationService {
     async register(firstName, lastName, userName, email, gender, password, role, phone, age) {
-        console.log(email);
+        var _a, _b, _c;
         try {
             const { status, data } = await axios_1.default.post(`${process.env.BASE_URL_AUTH}/register`, {
                 firstName,
@@ -25,6 +25,42 @@ let AuthenticationService = class AuthenticationService {
                 phone,
                 age,
             });
+            if ((data === null || data === void 0 ? void 0 : data.payload) && role == "PHARMACIST") {
+                const { status: userStatus, data: userData } = await axios_1.default.post(`${process.env.BASE_URL_MEDICAL_UNIT}/createPharmacist`, {
+                    id: (_a = data === null || data === void 0 ? void 0 : data.payload) === null || _a === void 0 ? void 0 : _a.id,
+                    firstName,
+                    lastName,
+                    userName,
+                    email,
+                    role,
+                    age,
+                    gender,
+                });
+            }
+            if (status == 201 && data && role == "PATIENT") {
+                const { status: userStatus, data: userData } = await axios_1.default.post(`${process.env.BASE_URL_MEDICAL_UNIT}/createPatient`, {
+                    id: (_b = data === null || data === void 0 ? void 0 : data.payload) === null || _b === void 0 ? void 0 : _b.id,
+                    firstName,
+                    lastName,
+                    userName,
+                    email,
+                    role,
+                    age,
+                    gender,
+                });
+            }
+            if (status == 201 && data && role == "PHYSICIAN") {
+                const { status: userStatus, data: userData } = await axios_1.default.post(`${process.env.BASE_URL_MEDICAL_UNIT}/createPhysician`, {
+                    id: (_c = data === null || data === void 0 ? void 0 : data.payload) === null || _c === void 0 ? void 0 : _c.id,
+                    firstName,
+                    lastName,
+                    userName,
+                    email,
+                    role,
+                    age,
+                    gender,
+                });
+            }
             return { status, data };
         }
         catch (error) {

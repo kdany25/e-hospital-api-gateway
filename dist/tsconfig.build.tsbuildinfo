@@ -1177,7 +1177,7 @@
         "affectsGlobalScope": false
       },
       "../src/modules/authentication/authentication.service.ts": {
-        "version": "b6784c5fb539df7b730fbe8465e9a25afb1f6790335e42aa7330963b4e2aad35",
+        "version": "a33f26540dbe3de994ac8e893be04b4c4c09bda04232bf6adc11f0afd9735e0d",
         "signature": "7a5c043306cc727b4c5822604fe3583fd847c69824d1fd6bfc410f1b7922620b",
         "affectsGlobalScope": false
       },

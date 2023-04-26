@@ -31,6 +31,54 @@ export class AuthenticationService {
 				}
 			);
 
+			if (data?.payload && role == "PHARMACIST") {
+				const { status: userStatus, data: userData } = await axios.post(
+					`${process.env.BASE_URL_MEDICAL_UNIT}/createPharmacist`,
+					{
+						id: data?.payload?.id,
+						firstName,
+						lastName,
+						userName,
+						email,
+						role,
+						age,
+						gender,
+					}
+				);
+			}
+
+			if (status == 201 && data && role == "PATIENT") {
+				const { status: userStatus, data: userData } = await axios.post(
+					`${process.env.BASE_URL_MEDICAL_UNIT}/createPatient`,
+					{
+						id: data?.payload?.id,
+						firstName,
+						lastName,
+						userName,
+						email,
+						role,
+						age,
+						gender,
+					}
+				);
+			}
+
+			if (status == 201 && data && role == "PHYSICIAN") {
+				const { status: userStatus, data: userData } = await axios.post(
+					`${process.env.BASE_URL_MEDICAL_UNIT}/createPhysician`,
+					{
+						id: data?.payload?.id,
+						firstName,
+						lastName,
+						userName,
+						email,
+						role,
+						age,
+						gender,
+					}
+				);
+			}
+
 			return { status, data };
 		} catch (error) {
 			return { error };
