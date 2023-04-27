@@ -47,7 +47,7 @@ export class AuthenticationService {
 				);
 			}
 
-			if (status == 201 && data && role == "PATIENT") {
+			if (data?.payload && role == "PATIENT") {
 				const { status: userStatus, data: userData } = await axios.post(
 					`${process.env.BASE_URL_MEDICAL_UNIT}/createPatient`,
 					{
@@ -63,7 +63,7 @@ export class AuthenticationService {
 				);
 			}
 
-			if (status == 201 && data && role == "PHYSICIAN") {
+			if (data?.payload && role == "PHYSICIAN") {
 				const { status: userStatus, data: userData } = await axios.post(
 					`${process.env.BASE_URL_MEDICAL_UNIT}/createPhysician`,
 					{
