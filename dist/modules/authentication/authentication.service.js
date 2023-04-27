@@ -36,7 +36,6 @@ let AuthenticationService = class AuthenticationService {
                     age,
                     gender,
                 });
-                console.log("pharmacist");
             }
             if ((data === null || data === void 0 ? void 0 : data.payload) && role == "PATIENT") {
                 const { status: userStatus, data: userData } = await axios_1.default.post(`${process.env.BASE_URL_MEDICAL_UNIT}/createPatient`, {
@@ -49,7 +48,6 @@ let AuthenticationService = class AuthenticationService {
                     age,
                     gender,
                 });
-                console.log("patient");
             }
             if ((data === null || data === void 0 ? void 0 : data.payload) && role == "PHYSICIAN") {
                 const { status: userStatus, data: userData } = await axios_1.default.post(`${process.env.BASE_URL_MEDICAL_UNIT}/createPhysician`, {
@@ -62,7 +60,6 @@ let AuthenticationService = class AuthenticationService {
                     age,
                     gender,
                 });
-                console.log("physician");
             }
             return { status, data };
         }

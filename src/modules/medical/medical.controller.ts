@@ -8,6 +8,8 @@ import {
 	Res,
 } from "@nestjs/common";
 import { MedicalService } from "./medical.service";
+import * as Papa from "papaparse";
+
 require("dotenv").config();
 
 @Controller("/api/v1/medical")
@@ -252,5 +254,21 @@ export class MedicalController {
 		if (error) return res.status(HttpStatus.BAD_REQUEST).json({ error });
 
 		return res.status(HttpStatus.OK).json({ data });
+	}
+
+	@Get("/downLoadCSV")
+	async downloadCSV(@Res() res, @Query() query) {
+		const { recordId } = query;
+		const subscriptionData = await this.medicalService.downLoadPrescription(
+			recordId
+		);
+
+		const csvData = Papa.unparse(subscriptionData);
+		res.setHeader("Content-Type", "text/csv");
+		res.setHeader(
+			"Content-Disposition",
+			'attachment; filename="subscriptions.csv"'
+		);
+		res.send(csvData);
 	}
 }

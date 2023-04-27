@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MedicalController = void 0;
 const common_1 = require("@nestjs/common");
 const medical_service_1 = require("./medical.service");
+const Papa = require("papaparse");
 require("dotenv").config();
 let MedicalController = class MedicalController {
     constructor(medicalService) {
@@ -139,6 +140,14 @@ let MedicalController = class MedicalController {
             return res.status(common_1.HttpStatus.BAD_REQUEST).json({ error });
         return res.status(common_1.HttpStatus.OK).json({ data });
     }
+    async downloadCSV(res, query) {
+        const { recordId } = query;
+        const subscriptionData = await this.medicalService.downLoadPrescription(recordId);
+        const csvData = Papa.unparse(subscriptionData);
+        res.setHeader("Content-Type", "text/csv");
+        res.setHeader("Content-Disposition", 'attachment; filename="subscriptions.csv"');
+        res.send(csvData);
+    }
 };
 __decorate([
     common_1.Get("/health"),
@@ -231,6 +240,13 @@ __decorate([
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "prescribeMedecine", null);
+__decorate([
+    common_1.Get("/downLoadCSV"),
+    __param(0, common_1.Res()), __param(1, common_1.Query()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", Promise)
+], MedicalController.prototype, "downloadCSV", null);
 MedicalController = __decorate([
     common_1.Controller("/api/v1/medical"),
     __metadata("design:paramtypes", [medical_service_1.MedicalService])

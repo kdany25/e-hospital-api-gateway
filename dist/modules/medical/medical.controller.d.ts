@@ -15,4 +15,5 @@ export declare class MedicalController {
     getAllMedecines(res: any): Promise<any>;
     uploadMedecine(payload: any, res: any): Promise<any>;
     prescribeMedecine(payload: any, res: any): Promise<any>;
+    downloadCSV(res: any, query: any): Promise<void>;
 }
