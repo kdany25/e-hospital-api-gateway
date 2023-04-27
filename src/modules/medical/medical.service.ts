@@ -234,7 +234,7 @@ export class MedicalService {
 				`${process.env.BASE_URL_MEDICAL_UNIT}/downloadPrescription?recordId=${recordId}`
 			);
       
-			console.log("iuhuihuihiuhiu",data)
+
 			return { status, data };
 		} catch (error) {
 			return { error };

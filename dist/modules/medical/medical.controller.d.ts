@@ -1,4 +1,5 @@
 import { MedicalService } from "./medical.service";
+import { Response } from "express";
 export declare class MedicalController {
     private readonly medicalService;
     constructor(medicalService: MedicalService);
@@ -15,5 +16,5 @@ export declare class MedicalController {
     getAllMedecines(res: any): Promise<any>;
     uploadMedecine(payload: any, res: any): Promise<any>;
     prescribeMedecine(payload: any, res: any): Promise<any>;
-    downloadCSV(res: any, query: any): Promise<void>;
+    downloadCsv(res: Response, query: any): Promise<Response<any, Record<string, any>>>;
 }

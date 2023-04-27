@@ -9,6 +9,9 @@ import {
 } from "@nestjs/common";
 import { MedicalService } from "./medical.service";
 import * as Papa from "papaparse";
+import * as csv from "csv-parser";
+import * as fs from "fs";
+import { Response } from "express";
 
 require("dotenv").config();
 
@@ -256,19 +259,48 @@ export class MedicalController {
 		return res.status(HttpStatus.OK).json({ data });
 	}
 
-	@Get("/downLoadCSV")
-	async downloadCSV(@Res() res, @Query() query) {
-		const { recordId } = query;
-		const subscriptionData = await this.medicalService.downLoadPrescription(
-			recordId
-		);
+	@Get("/downloadCSV")
+	async downloadCsv(@Res() res: Response, @Query() query) {
+		const { patientId } = query;
 
-		const csvData = Papa.unparse(subscriptionData);
-		res.setHeader("Content-Type", "text/csv");
-		res.setHeader(
-			"Content-Disposition",
-			'attachment; filename="subscriptions.csv"'
-		);
-		res.send(csvData);
+		const {
+			error,
+			data: medicalRecords,
+		} = await this.medicalService.getMedicalRecordsByPatientId(patientId);
+
+		if (error)
+			return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ error });
+
+		if (!medicalRecords.length)
+			return res
+				.status(HttpStatus.NOT_FOUND)
+				.json({ error: "No medical records found" });
+
+		const csvData = [];
+		csvData.push(["medName", "medPrice", "medExpiration"]);
+
+		medicalRecords[0]?.medicines.forEach((d) => {
+			const row = [];
+			row.push(d.medName);
+			row.push(d.medPrice);
+			row.push(d.medExpiration);
+			csvData.push(row);
+		});
+
+		const fileName = "subscriptions.csv";
+		const filePath = `./${fileName}`;
+
+		fs.writeFile(filePath, "", () => {});
+
+		csvData.forEach((d) => {
+			fs.appendFile(filePath, `${d.join(",")}\n`, () => {});
+		});
+
+		res.set({
+			"Content-Disposition": `attachment; filename=${fileName}`,
+			"Content-Type": "text/csv",
+		});
+
+		fs.createReadStream(filePath).pipe(res);
 	}
 }

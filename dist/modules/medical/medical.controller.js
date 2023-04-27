@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MedicalController = void 0;
 const common_1 = require("@nestjs/common");
 const medical_service_1 = require("./medical.service");
-const Papa = require("papaparse");
+const fs = require("fs");
 require("dotenv").config();
 let MedicalController = class MedicalController {
     constructor(medicalService) {
@@ -140,13 +140,36 @@ let MedicalController = class MedicalController {
             return res.status(common_1.HttpStatus.BAD_REQUEST).json({ error });
         return res.status(common_1.HttpStatus.OK).json({ data });
     }
-    async downloadCSV(res, query) {
-        const { recordId } = query;
-        const subscriptionData = await this.medicalService.downLoadPrescription(recordId);
-        const csvData = Papa.unparse(subscriptionData);
-        res.setHeader("Content-Type", "text/csv");
-        res.setHeader("Content-Disposition", 'attachment; filename="subscriptions.csv"');
-        res.send(csvData);
+    async downloadCsv(res, query) {
+        var _a;
+        const { patientId } = query;
+        const { error, data: medicalRecords, } = await this.medicalService.getMedicalRecordsByPatientId(patientId);
+        if (error)
+            return res.status(common_1.HttpStatus.INTERNAL_SERVER_ERROR).json({ error });
+        if (!medicalRecords.length)
+            return res
+                .status(common_1.HttpStatus.NOT_FOUND)
+                .json({ error: "No medical records found" });
+        const csvData = [];
+        csvData.push(["medName", "medPrice", "medExpiration"]);
+        (_a = medicalRecords[0]) === null || _a === void 0 ? void 0 : _a.medicines.forEach((d) => {
+            const row = [];
+            row.push(d.medName);
+            row.push(d.medPrice);
+            row.push(d.medExpiration);
+            csvData.push(row);
+        });
+        const fileName = "subscriptions.csv";
+        const filePath = `./${fileName}`;
+        fs.writeFile(filePath, "", () => { });
+        csvData.forEach((d) => {
+            fs.appendFile(filePath, `${d.join(",")}\n`, () => { });
+        });
+        res.set({
+            "Content-Disposition": `attachment; filename=${fileName}`,
+            "Content-Type": "text/csv",
+        });
+        fs.createReadStream(filePath).pipe(res);
     }
 };
 __decorate([
@@ -241,12 +264,12 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "prescribeMedecine", null);
 __decorate([
-    common_1.Get("/downLoadCSV"),
+    common_1.Get("/downloadCSV"),
     __param(0, common_1.Res()), __param(1, common_1.Query()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
-], MedicalController.prototype, "downloadCSV", null);
+], MedicalController.prototype, "downloadCsv", null);
 MedicalController = __decorate([
     common_1.Controller("/api/v1/medical"),
     __metadata("design:paramtypes", [medical_service_1.MedicalService])
