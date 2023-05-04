@@ -13,7 +13,7 @@ const authentication_service_1 = require("./authentication.service");
 let AuthenticationModule = class AuthenticationModule {
 };
 AuthenticationModule = __decorate([
-    (0, common_1.Module)({
+    common_1.Module({
         imports: [],
         controllers: [authentication_controller_1.AuthenticationController],
         providers: [authentication_service_1.AuthenticationService],

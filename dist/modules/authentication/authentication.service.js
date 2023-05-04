@@ -81,7 +81,7 @@ let AuthenticationService = class AuthenticationService {
     }
 };
 AuthenticationService = __decorate([
-    (0, common_1.Injectable)()
+    common_1.Injectable()
 ], AuthenticationService);
 exports.AuthenticationService = AuthenticationService;
 //# sourceMappingURL=authentication.service.js.map

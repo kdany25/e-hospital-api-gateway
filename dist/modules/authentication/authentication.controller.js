@@ -36,23 +36,21 @@ let AuthenticationController = class AuthenticationController {
     }
 };
 __decorate([
-    (0, common_1.Post)("/register"),
-    __param(0, (0, common_1.Body)()),
-    __param(1, (0, common_1.Res)()),
+    common_1.Post("/register"),
+    __param(0, common_1.Body()), __param(1, common_1.Res()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], AuthenticationController.prototype, "register", null);
 __decorate([
-    (0, common_1.Post)("/login"),
-    __param(0, (0, common_1.Body)()),
-    __param(1, (0, common_1.Res)()),
+    common_1.Post("/login"),
+    __param(0, common_1.Body()), __param(1, common_1.Res()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], AuthenticationController.prototype, "logIn", null);
 AuthenticationController = __decorate([
-    (0, common_1.Controller)("/api/v1/auth"),
+    common_1.Controller("/api/v1/auth"),
     __metadata("design:paramtypes", [authentication_service_1.AuthenticationService])
 ], AuthenticationController);
 exports.AuthenticationController = AuthenticationController;
