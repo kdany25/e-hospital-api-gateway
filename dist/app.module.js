@@ -10,11 +10,12 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const authentication_module_1 = require("./modules/authentication/authentication.module");
 const medical_module_1 = require("./modules/medical/medical.module");
+const soap_example_module_1 = require("./modules/soap/soap-example.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
-        imports: [authentication_module_1.AuthenticationModule, medical_module_1.MedicalModule],
+        imports: [authentication_module_1.AuthenticationModule, medical_module_1.MedicalModule, soap_example_module_1.SoapExampleModule],
         controllers: [],
         providers: [],
     })

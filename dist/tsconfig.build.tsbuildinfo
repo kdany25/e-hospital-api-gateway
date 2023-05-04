@@ -1056,7 +1056,7 @@
         "signature": "b9c89b4a2435c171e0a9a56668f510a376cb7991eaecef08b619e6d484841735",
         "affectsGlobalScope": false
       },
-      "../node_modules/axios/index.d.ts": {
+      "../node_modules/@nestjs/common/node_modules/axios/index.d.ts": {
         "version": "0d892f035dbee4534f0ba096407136877595ca592f67ec9bb8a5c912b9c967e8",
         "signature": "0d892f035dbee4534f0ba096407136877595ca592f67ec9bb8a5c912b9c967e8",
         "affectsGlobalScope": false
@@ -1174,6 +1174,11 @@
       "../node_modules/@nestjs/common/index.d.ts": {
         "version": "95b5a3078fdc51508d5d9cde59a1dd9525b53fd42dc12265a55261fd415d3274",
         "signature": "95b5a3078fdc51508d5d9cde59a1dd9525b53fd42dc12265a55261fd415d3274",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/axios/index.d.ts": {
+        "version": "d88dc05fd345b7a4e1816bbfd2dd087eefa9b9e36096818c2348f5b246971125",
+        "signature": "d88dc05fd345b7a4e1816bbfd2dd087eefa9b9e36096818c2348f5b246971125",
         "affectsGlobalScope": false
       },
       "../src/modules/authentication/authentication.service.ts": {
@@ -1481,8 +1486,108 @@
         "signature": "809452f9ac5a64f4aaf2695fea3d970b091fa97266a8e4e757cf5d8099185256",
         "affectsGlobalScope": false
       },
+      "../node_modules/soap/lib/types.d.ts": {
+        "version": "81ed9a20b676bd535cd2bb9be1ffeae3db368666e45e063f3882653dd2e159eb",
+        "signature": "81ed9a20b676bd535cd2bb9be1ffeae3db368666e45e063f3882653dd2e159eb",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/nscontext.d.ts": {
+        "version": "88942ba174e8dbe55b367b73653fdba16cccf260e808746fc6f3c249d98d8be4",
+        "signature": "88942ba174e8dbe55b367b73653fdba16cccf260e808746fc6f3c249d98d8be4",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/wsdl/elements.d.ts": {
+        "version": "5a873a1fc57a1b10218b80dbac1e0517a64d24e2e373cf324065a3d501fa004e",
+        "signature": "5a873a1fc57a1b10218b80dbac1e0517a64d24e2e373cf324065a3d501fa004e",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/wsdl/index.d.ts": {
+        "version": "f999764fcbf66486ac9ff1c248a3c068836b3f00d974fadf8c0d1c33dfe7b8a9",
+        "signature": "f999764fcbf66486ac9ff1c248a3c068836b3f00d974fadf8c0d1c33dfe7b8a9",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/client.d.ts": {
+        "version": "a6dc6255edeb74044534495b6cfdc5fad431e05ee4c0a9e37140a1af6190e43a",
+        "signature": "a6dc6255edeb74044534495b6cfdc5fad431e05ee4c0a9e37140a1af6190e43a",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/security/basicauthsecurity.d.ts": {
+        "version": "7d64373ce65cbb99be5cc1799646865fd94e5bc18f7e83e9c41ce7c03989a068",
+        "signature": "7d64373ce65cbb99be5cc1799646865fd94e5bc18f7e83e9c41ce7c03989a068",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/security/bearersecurity.d.ts": {
+        "version": "2eeb02a34bdabb885ba8c5c23efcebeb851fc2554bef7164272ac1631c4f9121",
+        "signature": "2eeb02a34bdabb885ba8c5c23efcebeb851fc2554bef7164272ac1631c4f9121",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/security/clientsslsecurity.d.ts": {
+        "version": "7b83a67c38308e72211c3051da6908bb256a4cee2bf331c26a69893fb45f36d1",
+        "signature": "7b83a67c38308e72211c3051da6908bb256a4cee2bf331c26a69893fb45f36d1",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/security/clientsslsecuritypfx.d.ts": {
+        "version": "55b9dda8bf8585576673dc2cd8691fa46c8dd3d8d494501a77f41e517253d6c6",
+        "signature": "55b9dda8bf8585576673dc2cd8691fa46c8dd3d8d494501a77f41e517253d6c6",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/security/ntlmsecurity.d.ts": {
+        "version": "162f412490dc0da52cb5e01d823a19190c8ef744407c4616648f919bc6daf83e",
+        "signature": "162f412490dc0da52cb5e01d823a19190c8ef744407c4616648f919bc6daf83e",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/security/wssecurity.d.ts": {
+        "version": "7722280c780021d92af7808100179a7b0f94326808e83c5d7b857d37b42e9781",
+        "signature": "7722280c780021d92af7808100179a7b0f94326808e83c5d7b857d37b42e9781",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/security/wssecuritycert.d.ts": {
+        "version": "fda6d924fa69fffd7be25ec2278879d91fb0a6c5f00f5d14082451ae108fa667",
+        "signature": "fda6d924fa69fffd7be25ec2278879d91fb0a6c5f00f5d14082451ae108fa667",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/security/wssecuritypluscert.d.ts": {
+        "version": "d404053912c5b1ce3e55a8779403a09558919446f3e50a154cac39a70b7e2906",
+        "signature": "d404053912c5b1ce3e55a8779403a09558919446f3e50a154cac39a70b7e2906",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/security/index.d.ts": {
+        "version": "a257859010b21e7fcd55dc2e0a7107a8a74a34b56c6c60c0f49fe95032bc2645",
+        "signature": "a257859010b21e7fcd55dc2e0a7107a8a74a34b56c6c60c0f49fe95032bc2645",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/server.d.ts": {
+        "version": "6da027d290561760d0993076a53c646eeeb94f6c4104bf43687f3c171b9f5044",
+        "signature": "6da027d290561760d0993076a53c646eeeb94f6c4104bf43687f3c171b9f5044",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/http.d.ts": {
+        "version": "b9e3c63bee8aced2a42babb43fc4827d2ce0e0e5809e8f03bc596c04b58093d8",
+        "signature": "b9e3c63bee8aced2a42babb43fc4827d2ce0e0e5809e8f03bc596c04b58093d8",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/utils.d.ts": {
+        "version": "afec295f6bc364795a85f6a43ca7f1ca5bba2f8e6fe66fd417493605ff936b4f",
+        "signature": "afec295f6bc364795a85f6a43ca7f1ca5bba2f8e6fe66fd417493605ff936b4f",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/soap/lib/soap.d.ts": {
+        "version": "6474eeeea26ca752c113c8c66871d112755fa8e45a42097aa6eca106b83c7e9b",
+        "signature": "6474eeeea26ca752c113c8c66871d112755fa8e45a42097aa6eca106b83c7e9b",
+        "affectsGlobalScope": false
+      },
+      "../src/modules/soap/soap-example.controller.ts": {
+        "version": "6d672c82ee4592dd99d8a75bcfe7741824be219003727177bd370d4765ec487d",
+        "signature": "6688880cf70aaa385a5212182c46178ca3fab709927ca6a463f85a10b35ab88d",
+        "affectsGlobalScope": false
+      },
+      "../src/modules/soap/soap-example.module.ts": {
+        "version": "ebf4ee7f13ad183513fed084d21db5482941a9107b9b41c19f133cf2c81007ed",
+        "signature": "7bf1df5fc518874d55089a30d87402c46f41080d96e0d1e696c1060de49cc2d0",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "6f2ce9b27026bd6f048cb25f328ecee07a0d2577d1ca8a8503d37905a178eb02",
+        "version": "1fe7669dd21fc0a6ffb24ca97be532534e26ff2242aec1137f04fcb8b04f2651",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -2220,7 +2325,7 @@
         "../node_modules/@nestjs/common/interfaces/index.d.ts"
       ],
       "../node_modules/@nestjs/common/http/http.service.d.ts": [
-        "../node_modules/axios/index.d.ts",
+        "../node_modules/@nestjs/common/node_modules/axios/index.d.ts",
         "../node_modules/rxjs/index.d.ts"
       ],
       "../node_modules/@nestjs/common/http/index.d.ts": [
@@ -2230,7 +2335,7 @@
       ],
       "../node_modules/@nestjs/common/http/interfaces/http-module.interface.d.ts": [
         "../node_modules/@nestjs/common/interfaces/index.d.ts",
-        "../node_modules/axios/index.d.ts"
+        "../node_modules/@nestjs/common/node_modules/axios/index.d.ts"
       ],
       "../node_modules/@nestjs/common/http/interfaces/index.d.ts": [
         "../node_modules/@nestjs/common/http/interfaces/http-module.interface.d.ts"
@@ -3323,10 +3428,95 @@
       "../node_modules/rxjs/internal/util/pipe.d.ts": [
         "../node_modules/rxjs/internal/types.d.ts"
       ],
+      "../node_modules/soap/lib/client.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/soap/lib/types.d.ts",
+        "../node_modules/soap/lib/wsdl/index.d.ts"
+      ],
+      "../node_modules/soap/lib/http.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/axios/index.d.ts",
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/basicauthsecurity.d.ts": [
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/bearersecurity.d.ts": [
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/clientsslsecurity.d.ts": [
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/clientsslsecuritypfx.d.ts": [
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/index.d.ts": [
+        "../node_modules/soap/lib/security/basicauthsecurity.d.ts",
+        "../node_modules/soap/lib/security/bearersecurity.d.ts",
+        "../node_modules/soap/lib/security/clientsslsecurity.d.ts",
+        "../node_modules/soap/lib/security/clientsslsecuritypfx.d.ts",
+        "../node_modules/soap/lib/security/ntlmsecurity.d.ts",
+        "../node_modules/soap/lib/security/wssecurity.d.ts",
+        "../node_modules/soap/lib/security/wssecuritycert.d.ts",
+        "../node_modules/soap/lib/security/wssecuritypluscert.d.ts"
+      ],
+      "../node_modules/soap/lib/security/ntlmsecurity.d.ts": [
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/wssecurity.d.ts": [
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/wssecuritycert.d.ts": [
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/wssecuritypluscert.d.ts": [
+        "../node_modules/soap/lib/security/wssecurity.d.ts",
+        "../node_modules/soap/lib/security/wssecuritycert.d.ts",
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/server.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/soap/lib/types.d.ts",
+        "../node_modules/soap/lib/wsdl/index.d.ts"
+      ],
+      "../node_modules/soap/lib/soap.d.ts": [
+        "../node_modules/soap/lib/client.d.ts",
+        "../node_modules/soap/lib/http.d.ts",
+        "../node_modules/soap/lib/security/index.d.ts",
+        "../node_modules/soap/lib/server.d.ts",
+        "../node_modules/soap/lib/types.d.ts",
+        "../node_modules/soap/lib/utils.d.ts",
+        "../node_modules/soap/lib/wsdl/index.d.ts"
+      ],
+      "../node_modules/soap/lib/types.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/axios/index.d.ts"
+      ],
+      "../node_modules/soap/lib/utils.d.ts": [
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/wsdl/elements.d.ts": [
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/wsdl/index.d.ts": [
+        "../node_modules/soap/lib/nscontext.d.ts",
+        "../node_modules/soap/lib/types.d.ts",
+        "../node_modules/soap/lib/wsdl/elements.d.ts"
+      ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/modules/authentication/authentication.module.ts",
-        "../src/modules/medical/medical.module.ts"
+        "../src/modules/medical/medical.module.ts",
+        "../src/modules/soap/soap-example.module.ts"
       ],
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
@@ -3362,6 +3552,15 @@
       "../src/modules/medical/medical.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/axios/index.d.ts"
+      ],
+      "../src/modules/soap/soap-example.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/soap/lib/soap.d.ts"
+      ],
+      "../src/modules/soap/soap-example.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/modules/soap/soap-example.controller.ts"
       ]
     },
     "exportedModulesMap": {
@@ -3573,7 +3772,7 @@
         "../node_modules/@nestjs/common/interfaces/index.d.ts"
       ],
       "../node_modules/@nestjs/common/http/http.service.d.ts": [
-        "../node_modules/axios/index.d.ts",
+        "../node_modules/@nestjs/common/node_modules/axios/index.d.ts",
         "../node_modules/rxjs/index.d.ts"
       ],
       "../node_modules/@nestjs/common/http/index.d.ts": [
@@ -3583,7 +3782,7 @@
       ],
       "../node_modules/@nestjs/common/http/interfaces/http-module.interface.d.ts": [
         "../node_modules/@nestjs/common/interfaces/index.d.ts",
-        "../node_modules/axios/index.d.ts"
+        "../node_modules/@nestjs/common/node_modules/axios/index.d.ts"
       ],
       "../node_modules/@nestjs/common/http/interfaces/index.d.ts": [
         "../node_modules/@nestjs/common/http/interfaces/http-module.interface.d.ts"
@@ -4675,6 +4874,90 @@
       ],
       "../node_modules/rxjs/internal/util/pipe.d.ts": [
         "../node_modules/rxjs/internal/types.d.ts"
+      ],
+      "../node_modules/soap/lib/client.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/soap/lib/types.d.ts",
+        "../node_modules/soap/lib/wsdl/index.d.ts"
+      ],
+      "../node_modules/soap/lib/http.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/axios/index.d.ts",
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/basicauthsecurity.d.ts": [
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/bearersecurity.d.ts": [
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/clientsslsecurity.d.ts": [
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/clientsslsecuritypfx.d.ts": [
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/index.d.ts": [
+        "../node_modules/soap/lib/security/basicauthsecurity.d.ts",
+        "../node_modules/soap/lib/security/bearersecurity.d.ts",
+        "../node_modules/soap/lib/security/clientsslsecurity.d.ts",
+        "../node_modules/soap/lib/security/clientsslsecuritypfx.d.ts",
+        "../node_modules/soap/lib/security/ntlmsecurity.d.ts",
+        "../node_modules/soap/lib/security/wssecurity.d.ts",
+        "../node_modules/soap/lib/security/wssecuritycert.d.ts",
+        "../node_modules/soap/lib/security/wssecuritypluscert.d.ts"
+      ],
+      "../node_modules/soap/lib/security/ntlmsecurity.d.ts": [
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/wssecurity.d.ts": [
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/wssecuritycert.d.ts": [
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/security/wssecuritypluscert.d.ts": [
+        "../node_modules/soap/lib/security/wssecurity.d.ts",
+        "../node_modules/soap/lib/security/wssecuritycert.d.ts",
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/server.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/soap/lib/types.d.ts",
+        "../node_modules/soap/lib/wsdl/index.d.ts"
+      ],
+      "../node_modules/soap/lib/soap.d.ts": [
+        "../node_modules/soap/lib/client.d.ts",
+        "../node_modules/soap/lib/http.d.ts",
+        "../node_modules/soap/lib/security/index.d.ts",
+        "../node_modules/soap/lib/server.d.ts",
+        "../node_modules/soap/lib/types.d.ts",
+        "../node_modules/soap/lib/utils.d.ts",
+        "../node_modules/soap/lib/wsdl/index.d.ts"
+      ],
+      "../node_modules/soap/lib/types.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/axios/index.d.ts"
+      ],
+      "../node_modules/soap/lib/utils.d.ts": [
+        "../node_modules/@types/node/index.d.ts",
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/wsdl/elements.d.ts": [
+        "../node_modules/soap/lib/types.d.ts"
+      ],
+      "../node_modules/soap/lib/wsdl/index.d.ts": [
+        "../node_modules/soap/lib/nscontext.d.ts",
+        "../node_modules/soap/lib/types.d.ts",
+        "../node_modules/soap/lib/wsdl/elements.d.ts"
       ],
       "../src/modules/authentication/authentication.controller.ts": [
         "../src/modules/authentication/authentication.service.ts"
