@@ -173,105 +173,114 @@ let MedicalController = class MedicalController {
     }
 };
 __decorate([
-    common_1.Get("/health"),
-    __param(0, common_1.Res()),
+    (0, common_1.Get)("/health"),
+    __param(0, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "healthCheck", null);
 __decorate([
-    common_1.Get("/physicians"),
-    __param(0, common_1.Res()),
+    (0, common_1.Get)("/physicians"),
+    __param(0, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "getAllDoctors", null);
 __decorate([
-    common_1.Get("/pharmacists"),
-    __param(0, common_1.Res()),
+    (0, common_1.Get)("/pharmacists"),
+    __param(0, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "getAllPharmacists", null);
 __decorate([
-    common_1.Get("/medicalRecords"),
-    __param(0, common_1.Res()), __param(1, common_1.Query()),
+    (0, common_1.Get)("/medicalRecords"),
+    __param(0, (0, common_1.Res)()),
+    __param(1, (0, common_1.Query)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "getMedicalRecords", null);
 __decorate([
-    common_1.Post("/populateMedicalRecords"),
-    __param(0, common_1.Res()),
+    (0, common_1.Post)("/populateMedicalRecords"),
+    __param(0, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "populateMedicalRecords", null);
 __decorate([
-    common_1.Post("/medicalRecords/assignDoctor"),
-    __param(0, common_1.Body()), __param(1, common_1.Res()),
+    (0, common_1.Post)("/medicalRecords/assignDoctor"),
+    __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "assignDoctor", null);
 __decorate([
-    common_1.Post("/medicalRecords/assignPharmacist"),
-    __param(0, common_1.Body()), __param(1, common_1.Res()),
+    (0, common_1.Post)("/medicalRecords/assignPharmacist"),
+    __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "assignPharmacy", null);
 __decorate([
-    common_1.Post("/addConsultation"),
-    __param(0, common_1.Body()), __param(1, common_1.Res()),
+    (0, common_1.Post)("/addConsultation"),
+    __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "assignConsultation", null);
 __decorate([
-    common_1.Post("/addMedicine"),
-    __param(0, common_1.Body()), __param(1, common_1.Res()),
+    (0, common_1.Post)("/addMedicine"),
+    __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "addMedicine", null);
 __decorate([
-    common_1.Post("/createRecord"),
-    __param(0, common_1.Body()), __param(1, common_1.Res()),
+    (0, common_1.Post)("/createRecord"),
+    __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "createSymptoms", null);
 __decorate([
-    common_1.Get("/allMedecines"),
-    __param(0, common_1.Res()),
+    (0, common_1.Get)("/allMedecines"),
+    __param(0, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "getAllMedecines", null);
 __decorate([
-    common_1.Post("/uploadMedecine"),
-    __param(0, common_1.Body()), __param(1, common_1.Res()),
+    (0, common_1.Post)("/uploadMedecine"),
+    __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "uploadMedecine", null);
 __decorate([
-    common_1.Post("/prescribeMedecine"),
-    __param(0, common_1.Body()), __param(1, common_1.Res()),
+    (0, common_1.Post)("/prescribeMedecine"),
+    __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "prescribeMedecine", null);
 __decorate([
-    common_1.Get("/downloadCSV"),
-    __param(0, common_1.Res()), __param(1, common_1.Query()),
+    (0, common_1.Get)("/downloadCSV"),
+    __param(0, (0, common_1.Res)()),
+    __param(1, (0, common_1.Query)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], MedicalController.prototype, "downloadCsv", null);
 MedicalController = __decorate([
-    common_1.Controller("/api/v1/medical"),
+    (0, common_1.Controller)("/api/v1/medical"),
     __metadata("design:paramtypes", [medical_service_1.MedicalService])
 ], MedicalController);
 exports.MedicalController = MedicalController;

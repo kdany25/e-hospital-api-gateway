@@ -13,7 +13,7 @@ const medical_service_1 = require("./medical.service");
 let MedicalModule = class MedicalModule {
 };
 MedicalModule = __decorate([
-    common_1.Module({
+    (0, common_1.Module)({
         imports: [],
         controllers: [medical_controller_1.MedicalController],
         providers: [medical_service_1.MedicalService],

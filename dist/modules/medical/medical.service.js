@@ -157,7 +157,7 @@ let MedicalService = class MedicalService {
     }
 };
 MedicalService = __decorate([
-    common_1.Injectable()
+    (0, common_1.Injectable)()
 ], MedicalService);
 exports.MedicalService = MedicalService;
 //# sourceMappingURL=medical.service.js.map
